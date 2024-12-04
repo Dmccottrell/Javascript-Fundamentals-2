@@ -109,7 +109,7 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 
 console.log(yearsUntilRetirement(1999, "Darryl"));
 console.log(yearsUntilRetirement(1935, "Mike"));
-*/
+
 
 //Introduction to Arrays
 
@@ -125,7 +125,77 @@ const friends = ["Michael", "Steve", "Peter"];
 
 console.log(friends);
 
-const years = new Array(1999, 2003, 2005);
-console.log(years);
+const y = new Array(1999, 2003, 2005);
+console.log(y);
 
 console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length); // finds the number of elments in the array
+console.log(friends[friends.length - 1]); //can only put expression inside []
+
+friends[2] = "Jay";
+console.log(friends);
+
+const firstName = "Darryl";
+const darryl = [firstName, "Mccottrell", 2024 - 1999, "Engineer", friends];
+
+console.log(darryl);
+console.log(darryl.length);
+
+//Exercise
+const calcAge = function (birthYear) {
+	return 2024 - birthYear;
+};
+
+const years = [1990, 1967, 2002, 2010, 2018];
+
+//console.log(calcAge(years)); // Example of what you can't due Produces NaN, can't due operations with arrays
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+	calcAge(years[0]),
+	calcAge(years[1]),
+	calcAge(years[years.length - 1]),
+];
+
+console.log(ages);
+
+
+*/
+
+//Array Methods
+
+// add elements
+
+const friends = ["Michael", "Steve", "Peter"];
+const newLength = friends.push("Jay"); // push function adds new element to array
+console.log(friends);
+console.log(newLength); //not normally used
+
+friends.unshift("John"); // moves element to front of array
+console.log(friends);
+
+//Remove elements
+friends.pop(); //Removes last element, dont't need to pass an argument
+const popped = friends.pop(); //Removes last element, dont't need to pass an argument
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // removes first element
+console.log(friends);
+
+console.log(friends.indexOf("Steve"));
+console.log(friends.indexOf("bob"));
+
+console.log(friends.includes("Steve")); // use includes method to write conditionals
+console.log(friends.includes("bob"));
+
+if (friends.includes("Steve")) {
+	//most used case of includes method
+	console.log("You have a friend called Steve");
+}
