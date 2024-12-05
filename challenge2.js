@@ -13,3 +13,31 @@ BONUS: Create an array totals containing the total values, so the bill + tip.
 TEST DATA: 125, 555, and 44.
 
 */
+
+//function calcTip
+
+const calcTip = function (tips) {
+	const bill = 0;
+	if (bill >= 50 || bill <= 300) {
+		return tips * 0.15;
+	} else if (bill < 50 || bill > 300) {
+		return tips * 0.2;
+	}
+	// 0.2 is 20 percent
+};
+
+const bill = calcTip(100);
+
+const bills = [125, 555, 44]; //array of bills
+
+const tips = [
+	// calculating the tips from the bills above
+	calcTip(bills[0]),
+	calcTip(bills[1]),
+	calcTip(bills[bills.length - 1]),
+];
+console.log(tips);
+
+console.log(bills, tips);
+const totals = [bills[0] + tips[0]];
+console.log(totals);

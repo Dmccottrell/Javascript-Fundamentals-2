@@ -135,3 +135,60 @@ if (neighbours.includes("Germany")) {
 
 neighbours[neighbours.indexOf("Mexico")] = "Mexico City;"; //Changing the name of neighbouring country
 console.log(neighbours);
+
+const myCountry = {
+	country: "United States",
+	capital: " Washington D.C",
+	language: "English",
+	population: 334,
+	neighbours: ["Canada", "Mexico"],
+
+	describe: function () {
+		console.log(
+			`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`,
+		);
+	},
+	checkIsland: function () {
+		this.isIsland = this.neighbours.length === 0 ? true : false;
+
+		// Even simpler version (see why this works...)
+		// this.isIsland = !Boolean(this.neighbours.length);
+	},
+};
+//Dot and Bracket Notation\
+
+//Using the object from the previous assignment, log a string like this to the console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries and a capital called Helsinki'.
+
+//Increase the country's population by two million using dot notation, and then decrease it by two million using bracket notation.
+
+console.log(
+	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`,
+);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+
+myCountry["population"] -= 2;
+console.log(myCountry.population);
+//`${myCountry.country} has ${mycountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`,
+
+//Object methods
+
+// Add a method called describe to the myCountry object. This method will log a string to the console, similar to the string logged in the previous assignment, but this time using the 'this' keyword.
+
+// Call the describe method.
+
+// Add a method called checkIsland to the myCountry object. This method will set a new property on the object, called isIsland. isIsland will be true if there are no neighbouring countries, and false if there are. Use the ternary operator to set the property.
+
+myCountry.describe();
+myCountry.checkIsland();
+
+console.log(myCountry);
+
+//ITERATION FOR LOOP
+// Iteration: The for Loop
+// There are elections in your country! in a small town, there are only 50 voters. Use a for loop to simulate the 50 people voting, by logging a string like this to the console (for numbers 1 to 50): 'Voter number 1 is currently voting'.
+
+for (let votes = 1; votes <= 50; votes++) {
+	console.log(`Voter number ${votes} is currently voting`);
+}

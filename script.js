@@ -166,7 +166,7 @@ const ages = [
 console.log(ages);
 
 
-*/
+
 
 //Array Methods
 
@@ -199,3 +199,157 @@ if (friends.includes("Steve")) {
 	//most used case of includes method
 	console.log("You have a friend called Steve");
 }
+
+
+
+//recap
+
+const darrylArray = [
+	"Darryl",
+	"McCottrell",
+	2024 - 1999,
+	"engineer",
+	[Julia, Dad, Mom], //array within an array
+];
+
+//Objects
+//simplest way to use objects, called object literal
+// use objects to group together objects that belong together, order does not matter compared to arrays
+const darryl = {
+	// curly braces to define an object
+	firstName: "Darryl",
+	lastName: "McCottrell",
+	age: 2024 - 1999,
+	job: "Engineer",
+	friends: ["Chimmey, Paul, Eric"],
+};
+
+
+const darryl = {
+	// curly braces to define an object
+	firstName: "Darryl",
+	lastName: "McCottrell",
+	age: 2024 - 1999,
+	job: "Engineer",
+	friends: ["Chimmey", "Paul", "Eric"],
+};
+
+console.log(darryl);
+
+//Dot Notation
+
+console.log(darryl.lastName);
+console.log(darryl["lastName"]); // bracket notation
+
+const nameKey = "Name";
+
+console.log(darryl["first" + nameKey]);
+console.log(darryl["last" + nameKey]);
+
+//when we need to computer propert name like above use bracket notation, otherwise use the dot notation
+
+const interestedIn = prompt(
+	"What do you wantr to know about Darryl? Choose between firstName, lastName, age, job, and friends",
+);
+
+if (darryl[interestedIn]) {
+	console.log(darryl[interestedIn]); // need to use bracket notation in this prompt case
+} else {
+	console.log(
+		'Wrong request! Choose between firstName, lastName, age, job, and friends"',
+	);
+}
+
+darryl.location = "Chicago";
+darryl["X"] = "Thatnoob24";
+console.log(darryl);
+
+//Challenge
+//"Darryl has 3 friends, and his best friend is called Michael"
+
+console.log(
+	`${darryl.firstName} has ${darryl.friends.length} friends and, his best friend is called ${darryl.friends[0]}`,
+);
+
+
+//OBJECT Methods
+//methods are properties and an instance below object methods can hold functions as long as colon : is used
+const darryl = {
+	// curly braces to define an object
+	firstName: "Darryl",
+	lastName: "McCottrell",
+	birthYear: 1999,
+	job: "Engineer",
+	friends: ["Chimmey", "Paul", "Eric"],
+	hasDriversLicense: true,
+
+	// calcAge: function (birthYear) {
+	// 	return 2024 - birthYear;
+	// },
+
+	// calcAge: function () {
+	// 	//console.log(this); //this point to the object for example darryl is the object so it calls it uses it in place of the object
+	// 	return 2024 - this.birthYear; // references darryk birthyear object
+	// },
+
+	calcAge: function () {
+		this.age = 2024 - this.birthYear;
+		return this.age;
+	},
+
+	getSummary: function () {
+		return `${this.firstName} is a ${this.calcAge()} year old ${
+			darryl.job
+		}, and he has ${this.hasDriversLicense ? "a" : "no"} drivers license `; // if/else statement, if true prints a, if false prints no
+	},
+};
+
+console.log(darryl.calcAge());
+
+console.log(darryl.age); //most effiecient
+console.log(darryl.age);
+console.log(darryl.age);
+//console.log(darryl["calcAge"](1999)); // breacket notation would need to be a string to call the function
+
+//challenge
+//"Darryl is a 25 year old teacher, and he has a drivers license"
+
+console.log(darryl.getSummary());
+ 
+
+//FOR LOOP iteration
+
+console.log("Lifting weights repition 1");
+
+// for loop keeps running while condition is true
+for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights repition ${rep} `); //call intializer in console to show rep counter being increased
+}
+*/
+//Looping arrays, breaking and continuing
+
+const darryl = [
+	"Darryl",
+	"McCottrell",
+	2024 - 1999,
+	"engineer",
+	["Julia", "Dad", "Mom"],
+];
+
+const types = [];
+// Normal way of going through array
+// console.log(darrylArray[0]);
+// ///...
+// console.log(darrylArray[1]);
+// console.log(darrylArray[4]);
+
+//for loop version of going through array
+for (let i = 0; i < darryl.length; i++) {
+	// use length to find the amount within array
+	console.log(darryl[i], typeof darryl[i]);
+
+	types[i] = typeof darryl[i];
+}
+
+types[0] = "string";
+console.log(types);
