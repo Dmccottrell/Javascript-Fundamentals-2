@@ -325,7 +325,7 @@ console.log("Lifting weights repition 1");
 for (let rep = 1; rep <= 10; rep++) {
 	console.log(`Lifting weights repition ${rep} `); //call intializer in console to show rep counter being increased
 }
-*/
+
 //Looping arrays, breaking and continuing
 
 const darryl = [
@@ -348,8 +348,92 @@ for (let i = 0; i < darryl.length; i++) {
 	// use length to find the amount within array
 	console.log(darryl[i], typeof darryl[i]);
 
-	types[i] = typeof darryl[i];
+	//types[i] = typeof darryl[i];
+	types.push(typeof darryl[i]);
 }
 
-types[0] = "string";
+//types[0] = "string";
 console.log(types);
+
+const years = [1999, 2007, 1970, 2021];
+const ages = []; // empty array
+
+for (let i = 0; i < years.length; i++) {
+	ages.push(2024 - years[i]); // years at the current loop position
+}
+
+console.log(ages);
+
+//continue and break in loops
+//continue is to access the current iteration of the loop and go to next one
+//break ends the loop where you put it
+
+//example of continue
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < darryl.length; i++) {
+	if (typeof darryl[i] != "string") continue;
+	console.log(darryl[i], typeof darryl[i]);
+}
+
+//example of break
+
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < darryl.length; i++) {
+	if (typeof darryl[i] != "number") break;
+	console.log(darryl[i], typeof darryl[i]);
+}
+
+
+
+//LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+const darryl = [
+	"Darryl",
+	"McCottrell",
+	2024 - 1999,
+	"engineer",
+	["Julia", "Dad", "Mom"],
+];
+
+// 0,1,..., 4
+// 4,3, ...,0
+
+for (let i = darryl.length - 1; i >= 0; i--) {
+	console.log(i, darryl[i]);
+}
+
+//How to create a loop inside of a loop
+
+for (let exercise = 1; exercise <= 4; exercise++) {
+	console.log(`-----------Starting exercise ${exercise}`); // for loop to start exercise iteration
+
+	for (let rep = 1; rep < 6; rep++) {
+		console.log(`Exercise ${exercise}: Lifting weights reptition ${rep}`); // inside for loop iteration rep iteration runs through
+	}
+}
+
+*/
+
+//While loop
+// for loop keeps running while condition is true
+// for (let rep = 1; rep <= 10; rep++) {
+// 	console.log(`Lifting weights repition ${rep} `); //call intializer in console to show rep counter being increased
+// }
+
+//while loop version of above
+//while loop we can only specify a condition
+
+let rep = 1; //condition is on outside, whicu would need to stay true
+while (rep <= 10) {
+	// run while condition is true
+	//console.log(`While: Lifting weights repition ${rep} `);
+	rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6);
+
+while (dice !== 6) {
+	console.log(`You rolled a ${dice}`); // this would be an infinite loop
+	dice = Math.trunc(Math.random() * 6 + 1);
+	if (dice === 6) console.log("Loop is about to end");
+}

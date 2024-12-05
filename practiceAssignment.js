@@ -192,3 +192,56 @@ console.log(myCountry);
 for (let votes = 1; votes <= 50; votes++) {
 	console.log(`Voter number ${votes} is currently voting`);
 }
+
+//LOOPING ARRAYS, BREAKING AND CONTINUING
+
+// Let's bring back the populations array from a previous assignment.
+
+// Use a for loop to compute an array called percentages2 containing the percentages of the world population for the 4 population values. Use the function percentageWOrld1 that you created earlier.
+
+// Confirm that percentages2 contains exactly the same values as the percentages array that we created manually in the previous assignment, and reflect on how much better this solution is.
+
+const populations = [10, 1441, 332, 83];
+const percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+	const perc = percentageOfWorld1(populations[i]);
+	percentages2.push(perc);
+}
+
+console.log(percentages2);
+
+//LOOPING BACKWARDS and LOOPS in LOOPS
+
+// Store this array of arrays into a variable called listOfNeighbours:
+
+// [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+// Log only the neighbouring countries to the console, one by one, not the entire arrays. Log a string like 'Neighbour: Canada' for each country.
+
+// You will need a loop inside a loop for this. This is actually a bit tricky, so don't worry if it's too difficult for you! But you can still try to figure this out anyway 😉
+
+const listOfNeighbours = [
+	["Canada", "Mexico"],
+	["Spain"],
+	["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++)
+	for (let y = 0; y < listOfNeighbours[i].length; y++)
+		console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+
+//THE WHILE LOOP
+// Recreate the challenge from the lecture Looping Arrays, Breaking and Continuing, but this time using a while loop (call the array percentages3).
+
+// Reflect on what solution you like better for this task: the for loop or the while loop?
+
+const percentages3 = [];
+
+let i = 0;
+while (i < populations.length) {
+	const perc = percentageOfWorld1(populations[i]);
+	percentages3.push(perc);
+	i++;
+}
+
+console.log(percentages3);
